@@ -1,0 +1,144 @@
+/* Hide native cursor globally */
+body {
+    cursor: none;
+}
+
+a,
+button,
+input,
+textarea,
+select {
+    cursor: none;
+}
+
+/* Custom Cursor Dot */
+.custom-cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    background-color: var(--avani-gold);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    /* Start centered */
+    margin-top: -3px;
+    margin-left: -3px;
+    transition: opacity 0.2s, background-color 0.2s;
+}
+
+.custom-cursor-dot.scale-0 {
+    opacity: 0;
+}
+
+/* Custom Cursor Outer Ring */
+.custom-cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--avani-olive);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    margin-top: -18px;
+    margin-left: -18px;
+    transition: width 0.3s ease-out, height 0.3s ease-out, background-color 0.3s ease-out, border-color 0.3s ease-out, margin 0.3s ease-out;
+    /* Add smooth lerping via JS typically, but simple translate3d manages okay performance */
+}
+
+.custom-cursor-ring.hovering {
+    width: 60px;
+    height: 60px;
+    margin-top: -30px;
+    margin-left: -30px;
+    background-color: rgba(197, 168, 128, 0.1);
+    /* Gold translucent */
+    border-color: var(--avani-gold);
+}
+
+/* Disable custom cursor on smaller screens */
+@media (max-width: 992px) {
+
+    .custom-cursor-dot,
+    .custom-cursor-ring {
+        display: none !important;
+    }
+
+    body,
+    a,
+    button,
+    input,
+    textarea,
+    select {
+        cursor: auto;
+    }
+}
+
+/* -----------------------------
+   Cinematic Grain Overlay
+------------------------------ */
+.cinematic-grain {
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    pointer-events: none;
+    z-index: 9990;
+    width: 200%;
+    height: 200vh;
+    background: transparent url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
+    opacity: 0.05;
+    animation: grainAnimation 1s steps(4) infinite;
+}
+
+@keyframes grainAnimation {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    10% {
+        transform: translate(-5%, -5%);
+    }
+
+    20% {
+        transform: translate(-10%, 5%);
+    }
+
+    30% {
+        transform: translate(5%, -10%);
+    }
+
+    40% {
+        transform: translate(-5%, 15%);
+    }
+
+    50% {
+        transform: translate(-10%, 5%);
+    }
+
+    60% {
+        transform: translate(15%, 0);
+    }
+
+    70% {
+        transform: translate(0, 15%);
+    }
+
+    80% {
+        transform: translate(3%, 35%);
+    }
+
+    90% {
+        transform: translate(-10%, 10%);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}

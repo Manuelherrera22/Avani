@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+:root {
+  /* AVANI Color Palette */
+  --avani-olive: #4a5d23;
+  --avani-olive-dark: #3a4b1c;
+  --avani-olive-transparent: rgba(74, 93, 35, 0.9);
+  --avani-gold: #c5a880;
+  --avani-gold-light: #d6bc97;
+  --avani-bg: #fdfbf7;
+  --avani-white: #ffffff;
+  --avani-text-dark: #2c351c;
+  --avani-text-light: #fdfbf7;
+
+  /* Typography */
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Montserrat', sans-serif;
+
+  /* Spacing & Layout */
+  --section-padding: 6rem 2rem;
+  --max-width: 1200px;
+
+  /* Transition */
+  --transition-smooth: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Base Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--avani-bg);
+  color: var(--avani-text-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-smoothing: grayscale;
+}
+
+/* -----------------------------
+   Custom Scrollbar
+------------------------------ */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--avani-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--avani-olive);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--avani-gold);
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--avani-olive) var(--avani-bg);
+}
+
+/* Typography Base */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: var(--avani-olive);
+  /* Changed from --avani-primary to --avani-olive to match existing variable */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-smooth);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Utilities */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-olive {
+  color: var(--avani-olive);
+}
+
+.text-gold {
+  color: var(--avani-gold);
+}
+
+.stencil-text {
+  font-family: 'Bodoni Moda', var(--font-heading);
+  font-weight: 700;
+  font-style: italic;
+  display: inline-block;
+  line-height: 1.3;
+  padding: 0.2em 0;
+}
+
+.text-light {
+  color: var(--avani-text-light);
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  border-radius: 2px;
+}
+
+.btn-primary {
+  background-color: var(--avani-olive);
+  color: var(--avani-text-light);
+  border-color: var(--avani-olive);
+}
+
+.btn-primary:hover {
+  background-color: var(--avani-white);
+  color: var(--avani-olive);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--avani-olive);
+  border-color: var(--avani-olive);
+}
+
+.btn-outline:hover {
+  background-color: var(--avani-olive);
+  color: var(--avani-text-light);
+}
+
+/* Animations */
+@keyframes fadeInReveal {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInReveal 1.2s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+  opacity: 0;
+}
+
+.delay-100 {
+  animation-delay: 100ms;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}

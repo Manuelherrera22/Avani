@@ -1,0 +1,139 @@
+.features {
+    background: linear-gradient(135deg, var(--avani-olive-dark) 0%, var(--avani-olive) 100%);
+    padding: var(--section-padding);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background stylistic elements matching image */
+.features::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -50px;
+    width: 400px;
+    height: 400px;
+    border: 1px solid rgba(197, 168, 128, 0.15);
+    /* Gold outline */
+    border-radius: 50%;
+}
+
+.features::after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: -150px;
+    width: 300px;
+    height: 300px;
+    border: 2px solid rgba(197, 168, 128, 0.1);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.features-container {
+    position: relative;
+    z-index: 2;
+}
+
+.features-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    font-size: 5rem;
+    font-family: var(--font-heading);
+    font-weight: 400;
+    /* Regular weight for elegant serif */
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.title-divider {
+    width: 60px;
+    height: 2px;
+    background-color: var(--avani-gold);
+    margin: 0 auto 1.5rem;
+}
+
+.features-desc {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.lotes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+.lote-card {
+    background-color: rgba(253, 251, 247, 0.05);
+    /* Slight light overlay */
+    border: 1px solid rgba(253, 251, 247, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    backdrop-filter: blur(10px);
+}
+
+.lote-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    border-color: var(--avani-gold);
+}
+
+.lote-image {
+    height: 250px;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(253, 251, 247, 0.5);
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.lote-info {
+    padding: 2rem;
+    text-align: center;
+}
+
+.lote-info h3 {
+    color: var(--avani-text-light);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-body);
+    font-weight: 600;
+}
+
+.lote-info p {
+    color: var(--avani-gold);
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+}
+
+.btn-light.btn-outline {
+    border-color: var(--avani-text-light);
+    color: var(--avani-text-light);
+}
+
+.btn-light.btn-outline:hover {
+    background-color: var(--avani-text-light);
+    color: var(--avani-olive);
+}
+
+.btn-sm {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 3.5rem;
+    }
+}

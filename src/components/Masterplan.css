@@ -1,0 +1,182 @@
+/* -----------------------------
+   Masterplan Section
+------------------------------ */
+.masterplan {
+    padding: 8rem 0;
+    background-color: var(--avani-bg);
+    color: var(--avani-text-dark);
+}
+
+.masterplan-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.masterplan-header {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.masterplan-desc {
+    color: var(--avani-text-muted);
+    font-size: 1.1rem;
+}
+
+.masterplan-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+@media (max-width: 1024px) {
+    .masterplan-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+}
+
+/* Image Viewer */
+.image-zoom-container {
+    position: relative;
+    width: 100%;
+    padding-top: 60%;
+    /* Aspect ratio 16:9 approx */
+    background-color: #e5e5e5;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    cursor: crosshair;
+}
+
+.viewer-hint {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.masterplan-img-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-zoom-container:hover .masterplan-img-placeholder {
+    transform: scale(2);
+    /* Simple CSS zoom on hover, JS pan optional */
+}
+
+.placeholder-text-fallback {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 2rem;
+    font-weight: bold;
+}
+
+/* Data Table */
+.masterplan-data {
+    height: 100%;
+}
+
+.data-table-wrapper {
+    background: var(--avani-olive-dark);
+    color: var(--avani-light);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+.data-table-header {
+    background: var(--avani-olive);
+    padding: 1.5rem;
+    text-align: center;
+    border-bottom: 2px solid var(--avani-gold);
+}
+
+.data-table-header h3 {
+    margin: 0;
+    color: var(--avani-gold);
+    font-family: var(--font-heading);
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+.data-table-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem;
+}
+
+/* Mini Custom Scrollbar exclusively for the table */
+.custom-scroll::-webkit-scrollbar {
+    width: 6px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+    background: var(--avani-gold);
+    border-radius: 4px;
+}
+
+.data-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 0.8rem;
+    column-gap: 1rem;
+}
+
+.data-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 6px;
+    border-left: 3px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.data-row:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-left-color: var(--avani-gold);
+    transform: translateX(3px);
+}
+
+.lote-id {
+    font-weight: 600;
+    color: #ddd;
+}
+
+.lote-area {
+    color: var(--avani-gold);
+    font-family: monospace;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 480px) {
+    .data-grid {
+        grid-template-columns: 1fr;
+    }
+}

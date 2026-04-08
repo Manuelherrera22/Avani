@@ -1,0 +1,112 @@
+/* -----------------------------
+   WhatsApp Floating Button
+------------------------------ */
+.whatsapp-wrapper {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 990;
+}
+
+.whatsapp-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 65px;
+    height: 65px;
+    background-color: var(--avani-olive);
+    color: var(--avani-bg);
+    border-radius: 50%;
+    box-shadow: 0 10px 30px rgba(74, 93, 35, 0.3);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    border: 1px solid rgba(197, 168, 128, 0.3);
+    /* subtle gold border */
+}
+
+.whatsapp-btn svg {
+    width: 38px;
+    height: 38px;
+}
+
+.whatsapp-btn:hover {
+    background-color: var(--avani-gold);
+    color: var(--avani-text-dark);
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .whatsapp-wrapper {
+        bottom: 1.5rem;
+        right: 1.5rem;
+    }
+
+    .whatsapp-btn {
+        width: 55px;
+        height: 55px;
+    }
+
+    .whatsapp-btn svg {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+/* -----------------------------
+   Splash Screen 
+------------------------------ */
+.splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--avani-olive-dark);
+    color: var(--avani-gold);
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.splash-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.splash-icon {
+    width: 60px;
+    height: 72px;
+    border: 2px solid var(--avani-gold);
+    border-radius: 0 0 30px 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.splash-icon::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background-color: var(--avani-gold);
+    animation: fillIcon 1.5s ease-out forwards;
+}
+
+@keyframes fillIcon {
+    to {
+        height: 100%;
+    }
+}
+
+.splash-logo h1 {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    letter-spacing: 6px;
+    color: var(--avani-bg);
+    margin: 0;
+    font-weight: 400;
+}
