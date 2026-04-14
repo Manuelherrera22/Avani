@@ -12,6 +12,17 @@
     align-items: center;
 }
 
+.agent-grid:not(:last-child) {
+    margin-bottom: 8rem;
+}
+
+.agent-grid.reverse-layout .agent-image-col {
+    order: 2;
+}
+.agent-grid.reverse-layout .agent-content-col {
+    order: 1;
+}
+
 .agent-image-col {
     position: relative;
 }
@@ -83,6 +94,13 @@
     .agent-grid {
         grid-template-columns: 1fr;
         gap: 3rem;
+    }
+    
+    .agent-grid .agent-image-col {
+        order: 1 !important;
+    }
+    .agent-grid .agent-content-col {
+        order: 2 !important;
     }
     
     .agent-image-wrapper {
