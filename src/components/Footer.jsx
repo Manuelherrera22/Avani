@@ -59,7 +59,7 @@ const Footer = () => {
                 <div className="footer-bottom">
                     <p>&copy; {new Date().getFullYear()} AVANI Urbanización. Todos los derechos reservados.</p>
                     <p className="mt-2" style={{ fontSize: '0.8rem', opacity: 0.8 }}>
-                        Desarrollado por Altic y Jorge Bienes Raíces.
+                        Desarrollado por Altic y Jorge Bienes Raíces | Contacto: +593 97 906 5106
                     </p>
                 </div>
             </div>
