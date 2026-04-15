@@ -14,8 +14,7 @@ const Navbar = () => {
       <div className="container nav-container">
         <MagneticWrapper>
           <div className="nav-logo">
-            {/* Text-based logo mimicking the shield */}
-            <div className="logo-icon"></div>
+            <img src="/src/assets/avani-logo.svg" alt="Avani Logo" className="logo-icon-svg" />
             <div className="logo-text">
               <span className="logo-main">AVANI</span>
               <span className="logo-sub">URBANIZACIÓN</span>

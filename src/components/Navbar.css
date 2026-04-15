@@ -19,24 +19,9 @@
     gap: 1rem;
 }
 
-.logo-icon {
-    width: 40px;
-    height: 48px;
-    border: 2px solid var(--avani-olive);
-    border-radius: 0 0 20px 20px;
-    position: relative;
-    overflow: hidden;
-}
-
-.logo-icon::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 60%;
-    background-color: var(--avani-olive);
-    clip-path: polygon(0 40%, 100% 0, 100% 100%, 0% 100%);
+.logo-icon-svg {
+    height: 60px;
+    width: auto;
 }
 
 .logo-text {
