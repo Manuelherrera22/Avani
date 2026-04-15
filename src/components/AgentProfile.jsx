@@ -41,27 +41,21 @@ const agents = [
 ];
 
 const AgentProfile = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
-
-    useEffect(() => {
-        const timer = setInterval(() => {
-            setCurrentIndex((prev) => (prev + 1) % agents.length);
-        }, 6000); // 6 seconds delay per slide
-        return () => clearInterval(timer);
-    }, []);
-
-    const agent = agents[currentIndex];
-
     return (
-        <section className="agent-profile" id="agente">
+        <section className="agent-profile" id="nosotros">
             <div className="container agent-container">
-                <AnimatePresence mode="wait">
+                <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+                    <h2 className="section-title text-gold" style={{ marginBottom: '1rem' }}>Nosotros</h2>
+                    <p style={{ maxWidth: '600px', margin: '0 auto', opacity: 0.8 }}>Conoce al equipo de expertos encargados del desarrollo y promoción de AVANI Urbanización.</p>
+                </div>
+
+                {agents.map((agent, index) => (
                     <motion.div 
-                        className="agent-grid" 
+                        className={`agent-grid ${index % 2 !== 0 ? 'reverse-layout' : ''}`} 
                         key={agent.id}
-                        initial={{ opacity: 0, x: 50 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: -50 }}
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-100px" }}
                         transition={{ duration: 0.6 }}
                     >
                         <div className="agent-image-col">
@@ -72,9 +66,9 @@ const AgentProfile = () => {
                         </div>
                         
                         <div className="agent-content-col">
-                            <h2 className="section-title text-gold" style={{ marginBottom: '0.2rem' }}>{agent.title}</h2>
-                            <h3 className="agent-name" style={{ marginTop: 0, marginBottom: '1rem' }}>{agent.name}</h3>
-                            <div className="title-divider"></div>
+                            <h2 className="section-title text-gold" style={{ marginBottom: '0.2rem', fontSize: '2.5rem' }}>{agent.title}</h2>
+                            <h3 className="agent-name" style={{ marginTop: 0, marginBottom: '1rem', fontSize: '2rem' }}>{agent.name}</h3>
+                            <div className="title-divider" style={{ marginLeft: 0 }}></div>
                             
                             <div className="agent-description">
                                 {agent.description.map((paragraph, pIndex) => (
@@ -83,28 +77,7 @@ const AgentProfile = () => {
                             </div>
                         </div>
                     </motion.div>
-                </AnimatePresence>
-
-                {/* Slider Navigation Dots */}
-                <div style={{ display: 'flex', justifyContent: 'center', marginTop: '3rem', gap: '0.8rem' }}>
-                    {agents.map((_, idx) => (
-                        <button 
-                            key={idx}
-                            onClick={() => setCurrentIndex(idx)}
-                            style={{ 
-                                width: '12px', 
-                                height: '12px', 
-                                borderRadius: '50%', 
-                                border: 'none', 
-                                cursor: 'pointer',
-                                backgroundColor: idx === currentIndex ? 'var(--avani-gold)' : 'rgba(255,255,255,0.2)',
-                                transition: 'all 0.3s ease',
-                                transform: idx === currentIndex ? 'scale(1.2)' : 'scale(1)'
-                            }}
-                            aria-label={`Ver perfil ${idx + 1}`}
-                        />
-                    ))}
-                </div>
+                ))}
             </div>
         </section>
     );

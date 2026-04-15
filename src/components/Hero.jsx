@@ -56,7 +56,7 @@ const Hero = () => {
                     transition={{ duration: 0.8, delay: 0.8 }}
                 >
                     <MagneticWrapper><a href="#galeria" className="btn btn-primary magnetic-btn">Ver Renders</a></MagneticWrapper>
-                    <MagneticWrapper><a href="https://wa.me/593987720841?text=Hola,%20me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20lotes%20en%20Avani%20Urbanizaci%C3%B3n." target="_blank" rel="noopener noreferrer" className="btn btn-outline magnetic-btn">Contáctanos</a></MagneticWrapper>
+                    <MagneticWrapper><a href="https://wa.me/593979065106?text=Hola,%20me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20lotes%20en%20Avani%20Urbanizaci%C3%B3n." target="_blank" rel="noopener noreferrer" className="btn btn-outline magnetic-btn">Contáctanos</a></MagneticWrapper>
                 </motion.div>
             </motion.div>
 

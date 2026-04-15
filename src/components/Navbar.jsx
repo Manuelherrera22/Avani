@@ -27,11 +27,11 @@ const Navbar = () => {
           <li><a href="#inicio">Inicio</a></li>
           <li><a href="#masterplan">Masterplan</a></li>
           <li><a href="#galeria">Renders</a></li>
-          <li><a href="#agente">Asesor</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
         </ul>
 
         <MagneticWrapper>
-          <a href="https://wa.me/593987720841?text=Hola,%20quisiera%20agendar%20una%20visita%20a%20Avani." target="_blank" rel="noopener noreferrer" className="btn btn-outline nav-btn magnetic-btn">Agenda tu Visita</a>
+          <a href="https://wa.me/593979065106?text=Hola,%20quisiera%20agendar%20una%20visita%20a%20Avani." target="_blank" rel="noopener noreferrer" className="btn btn-outline nav-btn magnetic-btn">Agenda tu Visita</a>
         </MagneticWrapper>
       </div>
     </motion.nav>

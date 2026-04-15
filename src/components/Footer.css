@@ -118,3 +118,21 @@
         gap: 2rem;
     }
 }
+
+@media (max-width: 576px) {
+    .footer {
+        padding: 3rem 0 1.5rem;
+    }
+    
+    .footer-logo {
+        font-size: 1.5rem;
+    }
+    
+    .contact-detail {
+        flex-direction: column;
+    }
+    
+    .social-icons {
+        justify-content: center;
+    }
+}

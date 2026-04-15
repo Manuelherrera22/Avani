@@ -65,8 +65,15 @@
 
 .lotes-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2.5rem;
+}
+
+@media (max-width: 576px) {
+    .lotes-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
 }
 
 .lote-card {
@@ -135,5 +142,17 @@
 @media (max-width: 768px) {
     .section-title {
         font-size: 3.5rem;
+    }
+    .features-header {
+        margin-bottom: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 2.5rem;
+    }
+    .features-desc {
+        font-size: 1rem;
     }
 }

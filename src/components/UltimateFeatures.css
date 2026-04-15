@@ -110,3 +110,10 @@
     margin: 0;
     font-weight: 400;
 }
+
+@media (max-width: 576px) {
+    .splash-logo h1 {
+        font-size: 2rem;
+        letter-spacing: 3px;
+    }
+}

@@ -130,3 +130,17 @@
         box-sizing: border-box;
     }
 }
+
+@media (max-width: 576px) {
+    .agent-content-col h2 {
+        font-size: 2.2rem;
+    }
+    
+    .agent-name {
+        font-size: 1.8rem;
+    }
+    
+    .agent-description {
+        font-size: 0.95rem;
+    }
+}

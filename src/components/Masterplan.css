@@ -179,4 +179,12 @@
     .data-grid {
         grid-template-columns: 1fr;
     }
+    
+    .masterplan {
+        padding: 4rem 0;
+    }
+    
+    .data-table-wrapper {
+        height: 400px;
+    }
 }

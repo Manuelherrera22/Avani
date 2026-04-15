@@ -72,3 +72,18 @@
         display: none;
     }
 }
+
+@media (max-width: 576px) {
+    .logo-main {
+        font-size: 1.8rem;
+    }
+    
+    .logo-sub {
+        font-size: 0.55rem;
+        letter-spacing: 4px;
+    }
+    
+    .logo-icon-svg {
+        height: 45px;
+    }
+}

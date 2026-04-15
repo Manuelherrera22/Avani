@@ -6,7 +6,7 @@ export const WhatsAppButton = () => {
     return (
         <MagneticWrapper className="whatsapp-wrapper">
             <a
-                href="https://wa.me/593987720841?text=Hola,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20lotes%20de%20AVANI"
+                href="https://wa.me/593979065106?text=Hola,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20lotes%20de%20AVANI"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="whatsapp-btn magnetic-btn"

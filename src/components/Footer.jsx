@@ -28,7 +28,7 @@ const Footer = () => {
                                         <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="1.5" />
                                     </svg>
                                 </span>
-                                <span className="contact-text">098 772 0841</span>
+                                <span className="contact-text">097 906 5106</span>
                             </div>
                             <div className="contact-detail mt-2">
                                 <span className="icon shield-icon">
@@ -58,6 +58,9 @@ const Footer = () => {
 
                 <div className="footer-bottom">
                     <p>&copy; {new Date().getFullYear()} AVANI Urbanización. Todos los derechos reservados.</p>
+                    <p className="mt-2" style={{ fontSize: '0.8rem', opacity: 0.8 }}>
+                        Desarrollado por Altic y Jorge Bienes Raíces.
+                    </p>
                 </div>
             </div>
         </footer>
