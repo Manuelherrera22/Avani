@@ -34,15 +34,16 @@ const Masterplan = () => {
                     </p>
                 </motion.div>
 
-                <div className="masterplan-content">
+                <div className="masterplan-content" style={{ display: 'block' }}>
                     <motion.div
                         className="masterplan-viewer"
                         initial={{ scale: 0.95, opacity: 0 }}
                         whileInView={{ scale: 1, opacity: 1 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8, delay: 0.2 }}
+                        style={{ width: '100%', maxWidth: '1400px', margin: '0 auto' }}
                     >
-                        {/* Interactive Image Viewer - Place image in public folder */}
+                        {/* Interactive Image Viewer */}
                         <div 
                             className="image-zoom-container"
                             onMouseMove={(e) => {
@@ -57,42 +58,17 @@ const Masterplan = () => {
                             onMouseLeave={(e) => {
                                 const img = e.currentTarget.querySelector('.masterplan-img-placeholder');
                                 if (img) {
-                                    // Reset after transition finishes or gradually
                                     setTimeout(() => {
                                         img.style.transformOrigin = `50% 50%`;
                                     }, 300);
                                 }
                             }}
+                            style={{ paddingTop: '56.25%' /* 16:9 Aspect Ratio */ }}
                         >
                             <div className="viewer-hint">
                                 <span>Pasa el cursor y muévelo para explorar</span>
                             </div>
-                            {/* Asuming the user will put masterplan.jpg in the public folder */}
                             <div className="masterplan-img-placeholder" style={{ backgroundImage: "url('/Master plan.jpeg')" }}>
-                            </div>
-                        </div>
-                    </motion.div>
-
-                    <motion.div
-                        className="masterplan-data"
-                        initial={{ x: 50, opacity: 0 }}
-                        whileInView={{ x: 0, opacity: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8, delay: 0.4 }}
-                    >
-                        <div className="data-table-wrapper">
-                            <div className="data-table-header">
-                                <h3>Área de Lotes</h3>
-                            </div>
-                            <div className="data-table-body custom-scroll">
-                                <div className="data-grid">
-                                    {lotesData.map((lote) => (
-                                        <div key={lote.id} className="data-row">
-                                            <span className="lote-id">Lote {lote.id}</span>
-                                            <span className="lote-area">{lote.area.toFixed(2)} M2</span>
-                                        </div>
-                                    ))}
-                                </div>
                             </div>
                         </div>
                     </motion.div>
