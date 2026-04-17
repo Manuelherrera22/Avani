@@ -7,6 +7,7 @@ import Footer from './components/Footer'
 import Gallery from './components/Gallery'
 import VideoShowcase from './components/VideoShowcase'
 import AgentProfile from './components/AgentProfile'
+import ClientsCarousel from './components/ClientsCarousel'
 import { CustomCursor, CinematicGrain } from './components/PremiumEffects'
 import { WhatsAppButton, SplashScreen } from './components/UltimateFeatures'
 import './index.css'
@@ -52,6 +53,7 @@ function App() {
         <Gallery />
         <Masterplan />
         <AgentProfile />
+        <ClientsCarousel />
       </main>
       <Footer />
     </>
