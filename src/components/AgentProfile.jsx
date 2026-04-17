@@ -7,7 +7,7 @@ const agents = [
     {
         id: "jorge-br",
         name: "Jorge Bienes Raíces",
-        title: "Tu Asesor Inmobiliario",
+        title: "Desarrollador y Asesor Inmobiliario",
         image: "/Jorge bienes raices .jpeg",
         description: [
             "Jorge Bienes Raíces es una marca personal especializada en la comercialización de propiedades en Ecuador, con más de 10 años de experiencia en el sector inmobiliario.",
@@ -19,7 +19,7 @@ const agents = [
     {
         id: "franklin",
         name: "Franklin Lictapuzon",
-        title: "Desarrollo y Promoción Inmobiliaria",
+        title: "CEO Altic Proyectos Inmobiliarios",
         image: "/fraklin.jpeg",
         description: [
             "Franklin Lictapuzon, conocido en el sector inmobiliario como Paco Licta, a lo largo de los años ha participado en el desarrollo y promoción de múltiples proyectos inmobiliarios en la región.",
