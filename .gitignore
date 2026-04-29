@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Raw media resources (not used by app, ~300MB+)
+public/RECURSOS-20260417T042353Z-3-001/
