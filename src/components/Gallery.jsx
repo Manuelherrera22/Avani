@@ -46,7 +46,13 @@ const Gallery = () => {
                         >
                             <MagneticWrapper>
                                 <div className="gallery-img-wrapper">
-                                    <img src={img.src} alt={img.alt} className="gallery-img" />
+                                    <img 
+                                        src={img.src} 
+                                        alt={img.alt} 
+                                        className="gallery-img" 
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
                                     <div className="gallery-overlay">
                                         <span className="gallery-plus">+</span>
                                     </div>

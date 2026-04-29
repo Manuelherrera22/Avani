@@ -76,44 +76,15 @@
     gap: 1.5rem;
 }
 
-.splash-icon {
-    width: 60px;
-    height: 72px;
-    border: 2px solid var(--avani-gold);
-    border-radius: 0 0 30px 30px;
-    position: relative;
-    overflow: hidden;
-}
-
-.splash-icon::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 0%;
-    background-color: var(--avani-gold);
-    animation: fillIcon 1.5s ease-out forwards;
-}
-
-@keyframes fillIcon {
-    to {
-        height: 100%;
-    }
-}
-
-.splash-logo h1 {
-    font-family: var(--font-heading);
-    font-size: 3.5rem;
-    letter-spacing: 6px;
-    color: var(--avani-bg);
-    margin: 0;
-    font-weight: 400;
+.splash-logo-img {
+    height: 180px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 20px rgba(197, 168, 128, 0.3));
 }
 
 @media (max-width: 576px) {
-    .splash-logo h1 {
-        font-size: 2rem;
-        letter-spacing: 3px;
+    .splash-logo-img {
+        height: 120px;
     }
 }

@@ -46,15 +46,7 @@ export const SplashScreen = () => {
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 1, ease: 'easeOut' }}
                     >
-                        {/* Minimalist representation of the AVANI logo for the loader */}
-                        <div className="splash-icon"></div>
-                        <motion.h1
-                            initial={{ clipPath: 'inset(0 100% 0 0)' }}
-                            animate={{ clipPath: 'inset(0 0% 0 0)' }}
-                            transition={{ duration: 1, delay: 0.5, ease: 'circOut' }}
-                        >
-                            AVANI
-                        </motion.h1>
+                        <img src="/VERTICAL-BLANCO.png" alt="Avani Urbanización" className="splash-logo-img" />
                     </motion.div>
                 </motion.div>
             )}

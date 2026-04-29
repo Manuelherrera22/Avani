@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './ClientsCarousel.css';
 
@@ -18,8 +18,8 @@ const ClientsCarousel = () => {
         return () => clearInterval(timer);
     }, []);
 
-    const nextSlide = () => setCurrentIndex((prev) => (prev + 1) % clientImages.length);
-    const prevSlide = () => setCurrentIndex((prev) => (prev - 1 + clientImages.length) % clientImages.length);
+    const nextSlide = useCallback(() => setCurrentIndex((prev) => (prev + 1) % clientImages.length), []);
+    const prevSlide = useCallback(() => setCurrentIndex((prev) => (prev - 1 + clientImages.length) % clientImages.length), []);
 
     return (
         <section className="clients-section" id="clientes">
@@ -43,6 +43,8 @@ const ClientsCarousel = () => {
                                 src={clientImages[currentIndex].src}
                                 alt={clientImages[currentIndex].alt}
                                 className="carousel-image"
+                                loading="lazy"
+                                decoding="async"
                                 initial={{ opacity: 0, scale: 0.95 }}
                                 animate={{ opacity: 1, scale: 1 }}
                                 exit={{ opacity: 0, scale: 0.95 }}

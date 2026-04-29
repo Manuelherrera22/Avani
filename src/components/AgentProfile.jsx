@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 import { MagneticWrapper } from './MagneticWrapper';
 import './AgentProfile.css';
 
@@ -60,7 +60,13 @@ const AgentProfile = () => {
                     >
                         <div className="agent-image-col">
                             <div className="agent-image-wrapper">
-                                <img src={agent.image} alt={agent.name} className="agent-img" />
+                                <img 
+                                    src={agent.image} 
+                                    alt={agent.name} 
+                                    className="agent-img" 
+                                    loading="lazy"
+                                    decoding="async"
+                                />
                                 <div className="agent-img-decoration"></div>
                             </div>
                         </div>

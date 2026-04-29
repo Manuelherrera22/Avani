@@ -22,10 +22,10 @@ select {
     border-radius: 50%;
     pointer-events: none;
     z-index: 9999;
-    transform: translate(-50%, -50%);
-    /* Start centered */
     margin-top: -3px;
     margin-left: -3px;
+    will-change: transform;
+    contain: layout style size;
     transition: opacity 0.2s, background-color 0.2s;
 }
 
@@ -44,11 +44,11 @@ select {
     border-radius: 50%;
     pointer-events: none;
     z-index: 9998;
-    transform: translate(-50%, -50%);
     margin-top: -18px;
     margin-left: -18px;
+    will-change: transform;
+    contain: layout style size;
     transition: width 0.3s ease-out, height 0.3s ease-out, background-color 0.3s ease-out, border-color 0.3s ease-out, margin 0.3s ease-out;
-    /* Add smooth lerping via JS typically, but simple translate3d manages okay performance */
 }
 
 .custom-cursor-ring.hovering {
@@ -57,7 +57,6 @@ select {
     margin-top: -30px;
     margin-left: -30px;
     background-color: rgba(197, 168, 128, 0.1);
-    /* Gold translucent */
     border-color: var(--avani-gold);
 }
 
@@ -81,64 +80,35 @@ select {
 
 /* -----------------------------
    Cinematic Grain Overlay
+   Optimized: smaller area, GPU compositing, fewer animation frames
 ------------------------------ */
 .cinematic-grain {
     position: fixed;
-    top: -50%;
-    left: -50%;
-    right: -50%;
-    bottom: -50%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     pointer-events: none;
     z-index: 9990;
-    width: 200%;
-    height: 200vh;
     background: transparent url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
-    opacity: 0.05;
-    animation: grainAnimation 1s steps(4) infinite;
+    background-size: 200px 200px;
+    opacity: 0.04;
+    will-change: transform;
+    contain: strict;
+    animation: grainAnimation 2s steps(3) infinite;
 }
 
 @keyframes grainAnimation {
     0% {
-        transform: translate(0, 0);
+        transform: translate3d(0, 0, 0);
     }
-
-    10% {
-        transform: translate(-5%, -5%);
+    33% {
+        transform: translate3d(-5%, -5%, 0);
     }
-
-    20% {
-        transform: translate(-10%, 5%);
+    66% {
+        transform: translate3d(5%, 5%, 0);
     }
-
-    30% {
-        transform: translate(5%, -10%);
-    }
-
-    40% {
-        transform: translate(-5%, 15%);
-    }
-
-    50% {
-        transform: translate(-10%, 5%);
-    }
-
-    60% {
-        transform: translate(15%, 0);
-    }
-
-    70% {
-        transform: translate(0, 15%);
-    }
-
-    80% {
-        transform: translate(3%, 35%);
-    }
-
-    90% {
-        transform: translate(-10%, 10%);
-    }
-
     100% {
-        transform: translate(0, 0);
+        transform: translate3d(0, 0, 0);
     }
 }

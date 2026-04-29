@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { MagneticWrapper } from './MagneticWrapper';
-import avaniLogo from '../assets/avani-logo.svg';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -15,11 +14,7 @@ const Navbar = () => {
       <div className="container nav-container">
         <MagneticWrapper>
           <div className="nav-logo">
-            <img src={avaniLogo} alt="Avani Logo" className="logo-icon-svg" />
-            <div className="logo-text">
-              <span className="logo-main">AVANI</span>
-              <span className="logo-sub">URBANIZACIÓN</span>
-            </div>
+            <img src="/HORIZONTAL-COLOR.png" alt="Avani Urbanización" className="logo-icon-svg" />
           </div>
         </MagneticWrapper>
 

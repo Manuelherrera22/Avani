@@ -1,6 +1,5 @@
 import React from 'react';
 import './Footer.css';
-import avaniLogo from '../assets/avani-logo.svg';
 
 const Footer = () => {
     return (
@@ -10,11 +9,7 @@ const Footer = () => {
 
                     <div className="footer-brand">
                         <div className="nav-logo">
-                            <img src={avaniLogo} alt="Avani Logo" className="logo-icon-svg" />
-                            <div className="logo-text">
-                                <span className="logo-main">AVANI</span>
-                                <span className="logo-sub">URBANIZACIÓN</span>
-                            </div>
+                            <img src="/HORIZONTAL-COLOR.png" alt="Avani Urbanización" className="logo-icon-svg" />
                         </div>
                     </div>
 
