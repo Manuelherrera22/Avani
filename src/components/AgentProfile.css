@@ -39,8 +39,10 @@
     height: auto;
     display: block;
     object-fit: cover;
+    object-position: center top;
     aspect-ratio: 4/5;
     transition: transform 0.6s ease;
+    image-orientation: from-image;
 }
 
 .agent-image-wrapper:hover .agent-img {
