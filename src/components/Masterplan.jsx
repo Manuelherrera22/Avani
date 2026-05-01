@@ -68,7 +68,7 @@ const Masterplan = () => {
                             <div className="viewer-hint">
                                 <span>Pasa el cursor y muévelo para explorar</span>
                             </div>
-                            <div className="masterplan-img-placeholder" style={{ backgroundImage: "url('/Masterplan2.jpeg')" }}>
+                            <div className="masterplan-img-placeholder" style={{ backgroundImage: "url('/planov4.jpeg')" }}>
                             </div>
                         </div>
                     </motion.div>
